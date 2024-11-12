@@ -5,6 +5,7 @@
                     <div class="col-md-12">
                         <h3>categories</h3>
                         <form method="post" enctype="multipart/form-data">
+                            @csrf
                                 <div class="mb-3">
                                     <label for="exampleInputEmail1" class="form-label">name</label>
                                     <input type="text" class="form-control" id="exampleInputEmail1" name="cname"
@@ -21,4 +22,9 @@
                     </div>
                 </div>
             </div>
+            @if (session("category"))
+<script>
+    alert("add category")
+</script>            
+            @endif
 @include ("components.footer")
