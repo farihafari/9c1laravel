@@ -16,4 +16,8 @@ class CategoryController extends Controller
         $catObject->save();
         return back()->with("category","add category");
     }
+    function ViewDetail(){
+        $allCat = Category::all();
+        return view("panel.viewcat",compact("allCat"));
+    }
 }
