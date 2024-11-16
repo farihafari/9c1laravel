@@ -19,8 +19,8 @@
                                     <tr>
                                         <th scope="row">{{$values['name']}}</th>
                                         <td><img src="assets/img/categories/{{$values['image']}}" width="90px" alt=""></td>
-                                        <td><a href="" class="btn btn-info">Edit</a></td>
-                                        <td><a href="" class="btn btn-danger">Delete</a></td>
+                                        <td><a href="update.{{$values['id']}}" class="btn btn-info">Edit</a></td>
+                                        <td><a href="delete.{{$values['id']}}" class="btn btn-danger">Delete</a></td>
                                    </tr>
                                    @endforeach
                                 </tbody>
@@ -28,4 +28,13 @@
                     </div>
                 </div>
             </div>
+            @if(session("updateCat"))
+            <script>
+                alert("category updated successfully")
+            </script>
+            @elseif(session("DeleteCategory"))
+            <script>
+                alert("category Delete successfully")
+            </script>
+            @endif
 @include("components.footer")
